@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:lottie/lottie.dart';
-import 'onboarding/boardingone.dart';
+import 'onboarding/boardingscreen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AnimatedSplashScreenWidget extends StatelessWidget {
@@ -24,7 +24,7 @@ class AnimatedSplashScreenWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Lottie.asset(
-                'icon/splashanimation.json',
+                'assets/icon/splashanimation.json',
                 width: 300,
                 height: 300,
                 fit: BoxFit.contain,
@@ -38,7 +38,7 @@ class AnimatedSplashScreenWidget extends StatelessWidget {
           ),
         ),
       ),
-      nextScreen: const BoardingOne(),
+      nextScreen:BoardingOne(),
       splashTransition: SplashTransition.fadeTransition,
       backgroundColor: Colors.transparent,
       splashIconSize: double.infinity,
