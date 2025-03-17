@@ -1,3 +1,4 @@
+import 'package:flottiecook/auth/register.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -159,7 +160,11 @@ class _LoginPageState extends State<LoginPage> {
                 width: double.infinity,
                 height: 50,
                 child: OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => RegisterPage()),
+                    );
+                  },
                   style: OutlinedButton.styleFrom(
                     side: BorderSide(
                       color: Color.fromARGB(142, 230, 110, 214),
@@ -171,7 +176,9 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: Text(
                     "Create New Account",
-                    style: GoogleFonts.poppins(color: Color.fromARGB(142, 230, 110, 214)),
+                    style: GoogleFonts.poppins(
+                      color: Color.fromARGB(142, 230, 110, 214),
+                    ),
                   ),
                 ),
               ),
