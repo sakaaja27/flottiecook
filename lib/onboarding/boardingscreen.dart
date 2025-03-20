@@ -31,6 +31,7 @@ class _IntroScreenDemoState extends State<BoardingOne> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
           color: Colors.white,
