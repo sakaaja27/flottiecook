@@ -1,5 +1,6 @@
-import 'package:flottiecook/auth/login.dart';
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/get_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -127,9 +128,7 @@ class _IntroScreenDemoState extends State<BoardingOne> {
               TextButton(
                 onPressed: () {
                   if (isLastPage) {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => LoginPage()),
-                    );
+                    Get.toNamed('/login');
                   } else {
                     controller.nextPage(
                       duration: Duration(milliseconds: 500),

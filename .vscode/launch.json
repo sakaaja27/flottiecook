@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "flottiecook",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/Views/main.dart"
+        },
+        {
+            "name": "flottiecook (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "program": "lib/Views/main.dart"
+        },
+        {
+            "name": "flottiecook (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "program": "lib/Views/main.dart"
+        }
+    ]
+}

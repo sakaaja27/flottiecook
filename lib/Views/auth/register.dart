@@ -1,16 +1,17 @@
-import 'package:flottiecook/auth/register.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:get/get.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   bool _scureText = true;
   final FocusNode _emailFocus = FocusNode();
   final FocusNode _passwordFocus = FocusNode();
@@ -55,7 +56,6 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 100),
                 Lottie.asset(
                   'assets/icon/splashanimation.json',
                   height: 239,
@@ -63,6 +63,35 @@ class _LoginPageState extends State<LoginPage> {
                   fit: BoxFit.contain,
                 ),
                 Text('LattieCook', style: GoogleFonts.agbalumo(fontSize: 34)),
+                const SizedBox(height: 30),
+                Container(
+                  margin: EdgeInsets.only(left: 30, right: 30),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(
+                        Icons.person_2_rounded,
+                        color: const Color.fromARGB(111, 239, 76, 212),
+                      ),
+                      fillColor: Color.fromARGB(255, 233, 233, 233),
+                      filled: true,
+                      hintText: 'Input your username',
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 233, 233, 233),
+                          width: 1.5,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 233, 233, 233),
+                          width: 2,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
                 const SizedBox(height: 30),
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 30),
@@ -77,6 +106,36 @@ class _LoginPageState extends State<LoginPage> {
                       fillColor: Color.fromARGB(255, 233, 233, 233),
                       filled: true,
                       hintText: 'Input your email',
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 233, 233, 233),
+                          width: 1.5,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 233, 233, 233),
+                          width: 2,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 30),
+                Container(
+                  margin: EdgeInsets.only(left: 30, right: 30),
+                  child: TextField(
+                    keyboardType: TextInputType.phone,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(
+                        Icons.phone_android_rounded,
+                        color: const Color.fromARGB(111, 239, 76, 212),
+                      ),
+                      fillColor: Color.fromARGB(255, 233, 233, 233),
+                      filled: true,
+                      hintText: 'Input your phone',
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(
@@ -147,7 +206,7 @@ class _LoginPageState extends State<LoginPage> {
                       backgroundColor: Color.fromARGB(142, 230, 110, 214),
                     ),
                     child: Text(
-                      "Sign In",
+                      "Sign Up",
                       style: GoogleFonts.poppins(
                         fontSize: 15,
                         color: Colors.white,
@@ -160,36 +219,14 @@ class _LoginPageState extends State<LoginPage> {
                   margin: EdgeInsets.symmetric(horizontal: 30),
                   child: Text("Forgot Password?"),
                 ),
-                const SizedBox(height: 90),
+                const SizedBox(height: 50),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 30),
-                  child: SizedBox(
-                    width: double.infinity,
-                    height: 50,
-                    child: OutlinedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => RegisterPage(),
-                          ),
-                        );
-                      },
-                      style: OutlinedButton.styleFrom(
-                        side: BorderSide(
-                          color: Color.fromARGB(142, 230, 110, 214),
-                          width: 2,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                      ),
-                      child: Text(
-                        "Create New Account",
-                        style: GoogleFonts.poppins(
-                          color: Color.fromARGB(142, 230, 110, 214),
-                        ),
-                      ),
-                    ),
+                  margin: EdgeInsets.only(left: 30, right: 30),
+                  child: TextButton(
+                    child: Text('Have already an account?'),
+                    onPressed: () {
+                      Get.toNamed('/login');
+                    },
                   ),
                 ),
               ],
